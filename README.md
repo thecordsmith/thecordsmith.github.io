@@ -1,1 +1,56 @@
-# thecordsmith.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cordsmith - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">The Cordsmith</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Handcrafted Keychains & More</h1>
+        <p>Unique designs woven with passion and precision.</p>
+        <a href="products.html" class="btn pulse">Shop Now</a>
+    </section>
+    <section class="featured-products">
+        <h2>Featured Creations</h2>
+        <div class="products-grid" id="featured-products"></div>
+    </section>
+    <footer>
+        <p>© 2025 Pranav Prabhu. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="#">Instagram</a> | <a href="#">TikTok</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Populate featured products with slide-in effect
+        const featuredProducts = products.slice(0, 3);
+        const grid = document.getElementById('featured-products');
+        featuredProducts.forEach((product, index) => {
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('product', 'slide-in');
+            productDiv.style.animationDelay = `${index * 0.2}s`;
+            productDiv.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>$${product.price.toFixed(2)}</p>
+                <a href="product.html?id=${product.id}" class="btn pulse">View Details</a>
+            `;
+            grid.appendChild(productDiv);
+        });
+    </script>
+</body>
+</html>
