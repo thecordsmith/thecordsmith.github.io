@@ -64,8 +64,6 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="cart.html">Cart</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -75,11 +73,6 @@
                     <a href="https://instagram.com/thecordsmith" target="_blank">Instagram</a> | 
                     <a href="https://tiktok.com/@thecordsmith" target="_blank">TikTok</a>
                 </div>
-                <form class="newsletter-form" action="https://formspree.io/f/xyzwrwbz" method="POST">
-                    <input type="email" name="_replyto" placeholder="Enter your email" required>
-                    <input type="hidden" name="_subject" value="Newsletter Signup">
-                    <button type="submit" class="btn">Subscribe</button>
-                </form>
             </div>
         </div>
         <div class="footer-bottom">
@@ -87,36 +80,5 @@
         </div>
     </footer>
     <script src="script.js"></script>
-    <script>
-        // Populate featured products
-        const featuredProducts = products.slice(0, 5);
-        const grid = document.getElementById('featured-products');
-        featuredProducts.forEach((product, index) => {
-            const productDiv = document.createElement('div');
-            productDiv.classList.add('product', 'slide-in');
-            productDiv.style.animationDelay = `${index * 0.2}s`;
-            productDiv.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" loading="lazy">
-                <h3>${product.name}</h3>
-                <p>$${product.price.toFixed(2)}</p>
-                <a href="product.html?id=${product.id}" class="btn">View Details</a>
-            `;
-            grid.appendChild(productDiv);
-        });
-
-        // Hide loader
-        window.addEventListener('load', () => {
-            document.getElementById('loader').style.display = 'none';
-        });
-
-        // Back to top button
-        const backToTop = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
 </body>
 </html>
