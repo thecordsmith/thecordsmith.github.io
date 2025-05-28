@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cordsmith - Product</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="loader" id="loader"></div>
+    <header>
+        <div class="logo">The Cordsmith</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="product-detail fade-in">
+        <div class="product-image" id="product-image"></div>
+        <div class="product-info">
+            <h2 id="product-name"></h2>
+            <p id="product-price"></p>
+            <p id="product-description"></p>
+            <div class="product-actions">
+                <button id="add-to-cart" class="btn pulse">Add to Cart</button>
+                <a href="index.html" class="btn back-home">Back to Home</a>
+            </div>
+        </div>
+    </section>
+    <div class="modal" id="cart-modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Added to Cart!</h3>
+            <p id="modal-product-name"></p>
+            <div class="modal-actions">
+                <a href="index.html" class="btn">Continue Shopping</a>
+                <a href="cart.html" class="btn pulse">View Cart</a>
+            </div>
+        </div>
+    </div>
+    <button class="back-to-top" id="back-to-top">↑</button>
+    <footer>
+        <p>© 2025 Pranav Prabhu. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://instagram.com/thecordsmith" target="_blank">Instagram</a> | 
+            <a href="https://tiktok.com/@thecordsmith" target="_blank">TikTok</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Get product ID from URL and populate details
+        const params = new URLSearchParams(window.location.search);
+        const productId = parseInt(params.get('id'));
+        const product = products.find(p => p.id === productId);
+        if (product) {
+            document.getElementById('product-image').innerHTML = `<img src="${product.image}" alt="${product.name}" loading="lazy">`;
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
+            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('add-to-cart').addEventListener('click', () => {
+                addToCart(product.id);
+                const modal = document.getElementById('cart-modal');
+                document.getElementById('modal-product-name').textContent = `${product.name} has been added to your cart.`;
+                modal.style.display = 'flex';
+            });
+        } else {
+            document.getElementById('product-info').innerHTML = '<p>Product not found.</p>';
+        }
+
+        // Hide loader
+        window.addEventListener('load', () => {
+            document.getElementById('loader').style.display = 'none';
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

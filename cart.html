@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cordsmith - Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">The Cordsmith</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="cart fade-in">
+        <h2>Your Cart</h2>
+        <div class="cart-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+        </div>
+        <div class="cart-total">
+            <p id="total-price">Total: $0.00</p>
+            <a href="checkout.html" class="btn pulse">Proceed to Checkout</a>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 Pranav Prabhu. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://instagram.com/thecordsmith" target="_blank">Instagram</a> | 
+            <a href="https://tiktok.com/@thecordsmith" target="_blank">TikTok</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cordsmith - About</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="loader" id="loader"></div>
+    <header>
+        <div class="logo">The Cordsmith</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="about fade-in">
+        <h2>About The Cordsmith</h2>
+        <div class="about-content">
+            <div class="about-card">
+                <h3>Our Story</h3>
+                <p>The Cordsmith is a passion project born from a love for crafting and creativity. We specialize in handwoven keychains, monkey fists, and more, each piece meticulously crafted to blend traditional knotting techniques with modern design.</p>
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Handcrafted keychain creation" loading="lazy">
+            </div>
+            <div class="about-card">
+                <h3>Meet Pranav</h3>
+                <p>Hi, I'm Pranav, a high school sophomore from Coppell, Texas. As a coder and crafter, I founded The Cordsmith to share my unique designs. When I'm not weaving cords, I'm coding new features for this site or discovering movies on Netflix!</p>
+                <a href="contact.html" class="btn">Get in Touch</a>
+            </div>
+        </div>
+        <div class="milestones">
+            <h3>Our Journey</h3>
+            <div class="milestone-grid">
+                <div class="milestone slide-in">
+                    <h4>2024</h4>
+                    <p>Founded The Cordsmith with a vision to create unique handcrafted items.</p>
+                </div>
+                <div class="milestone slide-in" style="animation-delay: 0.2s;">
+                    <h4>2025</h4>
+                    <p>Launched our online store to share our creations with the world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <button class="back-to-top" id="back-to-top">↑</button>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>The Cordsmith</h4>
+                <p>Handcrafted keychains and accessories made with passion in Coppell, Texas.</p>
+                <a href="index.html" class="footer-logo">The Cordsmith</a>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Stay Connected</h4>
+                <p>Email: <a href="mailto:thecordsmith678@gmail.com">thecordsmith678@gmail.com</a></p>
+                <div class="social-media">
+                    <a href="https://instagram.com/thecordsmith" target="_blank">Instagram</a> | 
+                    <a href="https://tiktok.com/@thecordsmith" target="_blank">TikTok</a>
+                </div>
+                <form class="newsletter-form" action="https://formspree.io/f/xyzwrwbz" method="POST">
+                    <input type="email" name="_replyto" placeholder="Enter your email" required>
+                    <input type="hidden" name="_subject" value="Newsletter Signup">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Pranav Prabhu. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Hide loader
+        window.addEventListener('load', () => {
+            document.getElementById('loader').style.display = 'none';
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
